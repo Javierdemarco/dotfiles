@@ -29,7 +29,10 @@ alias lgout="pkill -KILL -u javi"
 alias v="nvim"
 #Zoxide
 alias z="zoxide"
-
+# Emacs
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+    alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
+fi
 export PATH=~/.local/bin:$PATH
 
 function man() {

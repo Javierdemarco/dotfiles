@@ -8,8 +8,8 @@ HISTFILE=~/.config/zsh/.zsh_history
 HISTSIZE=1000
 setopt INC_APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
-# Vi mode
-bindkey -v
+# Emacs mode
+bindkey -e
 bindkey '^R' history-incremental-search-backward
 export KEYTIMEOUT=1
 # The following lines were added by compinstall
@@ -33,7 +33,6 @@ if [ -d "$HOME/.scripts/apps" ] ; then
     PATH="$PATH:$HOME/.scripts/apps"
 fi
 for f in ~/.config/zsh/*.zsh; do source "$f"; done
-eval "$(zoxide init zsh)"
 # Variables
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=emacs
+export VISUAL=emacs
