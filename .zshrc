@@ -36,3 +36,5 @@ for f in ~/.config/zsh/*.zsh; do source "$f"; done
 # Variables
 export EDITOR=emacs
 export VISUAL=emacs
+# Emacs preformance
+export LSP_USE_PLISTS=true
