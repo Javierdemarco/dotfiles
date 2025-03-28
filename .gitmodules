@@ -7,6 +7,3 @@
 [submodule ".config/ranger/plugins/ranger-fzf-filter"]
 	path = .config/ranger/plugins/ranger-fzf-filter
 	url = https://github.com/MuXiu1997/ranger-fzf-filter
-[submodule "/home/demarco/.config/nvim"]
-	path = /home/demarco/.config/nvim
-	url = https://github.com/LazyVim/starter
