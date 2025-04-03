@@ -3,7 +3,7 @@
 SETUVAR --export NNN_ARCHIVE:\x5c\x2e\x287z\x7ca\x7cace\x7calz\x7carc\x7carj\x7cbz\x7cbz2\x7ccab\x7ccpio\x7cdeb\x7cgz\x7cjar\x7clha\x7clz\x7clzh\x7clzma\x7clzo\x7crar\x7crpm\x7crz\x7ct7z\x7ctar\x7ctbz\x7ctbz2\x7ctgz\x7ctlz\x7ctxz\x7ctZ\x7ctzo\x7cwar\x7cxpi\x7cxz\x7cZ\x7czip\x29\x24
 SETUVAR --export NNN_BMS:p\x3a\x7e/Documents/Git/\x3bd\x3a\x7e/Downloads/\x3bh\x3a\x7e/
 SETUVAR --export NNN_FIFO:/tmp/nnn\x2efifo
-SETUVAR --export NNN_PLUG:p\x3apreview\x2dtui\x3bP\x3apreview\x2dtabbed
+SETUVAR --export NNN_PLUG:p\x3apreview\x2dtui
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
