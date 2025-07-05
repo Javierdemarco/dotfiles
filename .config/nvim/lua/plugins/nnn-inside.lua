@@ -17,7 +17,7 @@ return {
         })
     end,
     keys = {
-        { "<leader>Fn", "<cmd>NnnExplorer %:p:h<cr>", desc = "NnnExplorer" },
-        { "<leader>FN", "<cmd>NnnPicker %:p:h<cr>", desc = "NnnPicker" },
+        { "<leader>Fn", "<cmd>NnnExplorer<cr>", desc = "NnnExplorer" },
+        { "<leader>FN", "<cmd>NnnPicker<cr>", desc = "NnnPicker" },
     },
 }
