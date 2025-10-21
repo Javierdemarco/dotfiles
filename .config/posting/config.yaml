@@ -1,0 +1,6 @@
+theme: "nord"
+animation: "basic"
+collection_browser:
+  show_on_startup: false
+focus:
+  on_response: "body"

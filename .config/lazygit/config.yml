@@ -1,0 +1,129 @@
+# Config relating to the Lazygit UI
+gui:
+  # If true, capture mouse events.
+  # When mouse events are captured, it's a little harder to select text: e.g. requiring you to hold the option key when on macOS.
+  mouseEvents: false
+
+  # Format used when displaying time if the time is less than 24 hours ago.
+  # Uses Go's time format syntax: https://pkg.go.dev/time#Time.Format
+  shortTimeFormat: 03:04
+
+  # If true, show the number of lines changed per file in the Files view
+  showNumstatInFilesView: true
+
+  # Nerd fonts version to use.
+  # One of: '2' | '3' | empty string (default)
+  # If empty, do not show icons.
+  nerdFontsVersion: "3"
+
+  # Whether to show the divergence from the base branch in the branches view.
+  # One of: 'none' | 'onlyArrow'  | 'arrowAndNumber'
+  showDivergenceFromBaseBranch: arrowAndNumber
+
+  # How things are filtered when typing '/'.
+  # One of 'substring' (default) | 'fuzzy'
+  filterMode: fuzzy
+
+  # Status panel view.
+  # One of 'dashboard' (default) | 'allBranchesLog'
+  statusPanelView: allBranchesLog
+
+  # Theme Catppucin Macchiato
+  theme:
+    activeBorderColor:
+      - "#eed49f"
+      - bold
+    inactiveBorderColor:
+      - "#a5adcb"
+    optionsTextColor:
+      - "#8aadf4"
+    selectedLineBgColor:
+      - "#363a4f"
+    cherryPickedCommitBgColor:
+      - "#494d64"
+    cherryPickedCommitFgColor:
+      - "#eed49f"
+    unstagedChangesColor:
+      - "#ed8796"
+    defaultFgColor:
+      - "#cad3f5"
+    searchingActiveBorderColor:
+      - "#eed49f"
+
+  authorColors:
+    "*": "#b7bdf8"
+
+# Config relating to git
+git:
+  paging:
+    # e.g.
+    # diff-so-fancy
+    # delta --dark --paging=never
+    # ydiff -p cat -s --wrap --width={{columnWidth}}
+    pager: diff-so-fancy
+
+  # Config relating to committing
+  commit:
+    # If autoWrapCommitMessage is true, the width to wrap to
+    autoWrapWidth: 80
+
+  # list of branches that are considered 'main' branches, used when displaying commits
+  mainBranches:
+    - master
+    - main
+
+  # If true, parse emoji strings in commit messages e.g. render :rocket: as 🚀
+  # (This should really be under 'gui', not 'git')
+  parseEmoji: true
+
+# Periodic update checks
+update:
+  # One of: 'prompt' (default) | 'background' | 'never'
+  method: background
+
+  # Period in days between update checks
+  days: 7
+
+os:
+  editPreset: "nvim"
+customCommands:
+  - key: "f"
+    command: "git difftool -y {{.SelectedLocalCommit.Sha}} -- {{.SelectedCommitFile.Name}}"
+    context: "commitFiles"
+    description: "Compare (difftool) with local copy"
+  - key: "<c-g>"
+    command: "gh pr create --fill --web"
+    context: "global"
+    loadingText: "Creating pull request on GitHub"
+    description: "Create pull request on GitHub"
+  - key: "v"
+    context: "localBranches"
+    loadingText: "Checking out GitHub Pull Request..."
+    description: "Checkout pull request on GitHub"
+    command: "gh pr checkout {{.Form.PullRequestNumber}}"
+    prompts:
+      - type: "menuFromCommand"
+        title: "Which PR do you want to check out?"
+        key: "PullRequestNumber"
+        command: >-
+          gh pr list --json number,title,headRefName,updatedAt
+          --template '{{`{{range .}}{{printf "#%v: %s - %s (%s)" .number .title .headRefName (timeago .updatedAt)}}{{end}}`}}'
+        filter: "#(?P<number>[0-9]+): (?P<title>.+) - (?P<ref_name>[^ ]+).*"
+        valueFormat: "{{.number}}"
+        labelFormat: '{{"#" | black | bold}}{{.number | white | bold}} {{.title | yellow | bold}}{{" [" | black | bold}}{{.ref_name | green}}{{"]" | black | bold}}'
+  - key: "b"
+    command: "git branch --merged master | grep -v '^[ *]*master$' | xargs -r git branch -d"
+    context: "localBranches"
+    loadingText: "Pruning..."
+    description: "Prune local branches that have been merged to master"
+  - key: "G"
+    command: |
+      git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
+    context: "localBranches"
+    description: "Prune local branches no longer on its remote; (G)one."
+    loadingText: "Pruning gone..."
+  - key: "E"
+    description: "Add empty commit"
+    context: "commits"
+    command: 'git commit --allow-empty -m "empty commit"'
+    loadingText: "Committing empty commit..."
