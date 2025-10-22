@@ -9,6 +9,7 @@ PATH+=:$HOME/.config/scripts/
 PATH+=:$HOME/.local/bin/
 export PATH
 setopt extendedglob nomatch
+export TERMINAL="ghostty"
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
