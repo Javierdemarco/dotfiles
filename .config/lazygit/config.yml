@@ -20,6 +20,15 @@ gui:
   # One of: 'none' | 'onlyArrow'  | 'arrowAndNumber'
   showDivergenceFromBaseBranch: arrowAndNumber
 
+  # If true, increase the height of the focused side window; creating an accordion
+  # effect.
+  expandFocusedSidePanel: true
+
+  # Default size for focused window. Can be changed from within Lazygit with '+'
+  # and '_' (but this won't change the default).
+  # One of: 'normal' (default) | 'half' | 'full'
+  screenMode: half
+
   # How things are filtered when typing '/'.
   # One of 'substring' (default) | 'fuzzy'
   filterMode: fuzzy
@@ -55,17 +64,10 @@ gui:
 
 # Config relating to git
 git:
-  paging:
-    # e.g.
-    # diff-so-fancy
-    # delta --dark --paging=never
-    # ydiff -p cat -s --wrap --width={{columnWidth}}
-    pager: diff-so-fancy
-
   # Config relating to committing
   commit:
     # If autoWrapCommitMessage is true, the width to wrap to
-    autoWrapWidth: 80
+    autoWrapWidth: 100
 
   # list of branches that are considered 'main' branches, used when displaying commits
   mainBranches:
