@@ -7,6 +7,8 @@ export MANPAGER="nvim +Man!"
 export MANWIDTH=999
 PATH+=:$HOME/.config/scripts/
 PATH+=:$HOME/.local/bin/
+PATH+=:$HOME/.cargo/bin/
+PATH+=:$HOME/go/bin/
 export PATH
 setopt extendedglob nomatch
 export TERMINAL="ghostty"

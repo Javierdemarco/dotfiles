@@ -2,5 +2,7 @@ theme: "nord"
 animation: "basic"
 collection_browser:
   show_on_startup: false
+  position: "right"
 focus:
   on_response: "body"
+layout: "horizontal"

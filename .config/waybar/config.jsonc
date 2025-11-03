@@ -12,6 +12,8 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "tray",
+        "battery",
         "clock"
     ],
     "hyprland/workspaces": {
@@ -22,14 +24,30 @@
             "2": "2",
             "3": "3",
             "4": "4",
-            "5": "5",
-            "urgent": ""
-            // "active": "",
-            // "default": ""
+            "5": "5"
         }
     },
     "hyprland/window": {
         "icon": true
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "max-length": 25
+    },
+    "tray": {
+        "icon-size": 26
     },
     "clock": {
         "format": "{:%H:%M}",
