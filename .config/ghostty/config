@@ -52,7 +52,6 @@ font-family-bold = monospace
 font-family-italic = monospace
 font-family-bold-italic = monospace
 font-size = 14
-theme = nordic
 mouse-hide-while-typing = true
 keybind = ctrl+shift+t=new_tab
 keybind = ctrl+alt+h=previous_tab
@@ -62,3 +61,4 @@ keybind = ctrl+alt+v=new_split:right
 keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+shift+v=paste_from_clipboard
 shell-integration = zsh
+theme = noctalia

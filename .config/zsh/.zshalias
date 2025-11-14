@@ -22,3 +22,6 @@ alias fda="fd --hidden"
 alias cht="cht.sh"
 alias rsync="rsync -Phav"
 alias rsync-remote="rsync -Phavz"
+# Neovim configs alias
+alias nn='nvim'
+alias na='NVIM_APPNAME=nvim-artic nvim'

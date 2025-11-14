@@ -25,8 +25,8 @@ compinit
 source ~/.config/zsh/.zshalias
 # Starship
 eval "$(starship init zsh)"
-# Fastfetch
-fastfetch -c ~/.config/fastfetch/personal.json
+# Fastfetch (Currently uninstalled)
+#fastfetch -c ~/.config/fastfetch/personal.json
 # Fish-like syntax highlight and and autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
