@@ -1,0 +1,59 @@
+# --- Font ---
+font-family = sans-serif
+font-family-bold = sans-serif
+font-family-italic = sans-serif
+font-family-bold-italic = sans-serif
+font-size = 13
+font-feature = liga, calt, dlig
+font-thicken = true
+
+# --- Cursor ---
+cursor-style = block
+
+# --- Window ---
+window-padding-x = 0
+window-padding-y = 0
+background-opacity = 0.95
+confirm-close-surface = true
+window-decoration = none
+window-theme = dark
+
+# --- Scroll ---
+scrollback-limit = 100000
+
+# --- Mouse ---
+mouse-hide-while-typing = true
+
+# --- Clipboard ---
+copy-on-select = false
+
+# SHELL Integration
+shell-integration = fish
+
+# --- Keybindings (tmux/vim friendly) ---
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+enter=new_window
+
+palette = 0=#15161e
+palette = 1=#f7768e
+palette = 2=#9ece6a
+palette = 3=#e0af68
+palette = 4=#7aa2f7
+palette = 5=#bb9af7
+palette = 6=#7dcfff
+palette = 7=#a9b1d6
+palette = 8=#414868
+palette = 9=#ff899d
+palette = 10=#9fe044
+palette = 11=#faba4a
+palette = 12=#8db0ff
+palette = 13=#c7a9ff
+palette = 14=#a4daff
+palette = 15=#c0caf5
+
+background = #1a1b26
+foreground = #c0caf5
+cursor-color = #c0caf5
+selection-background = #283457
+selection-foreground = #c0caf5

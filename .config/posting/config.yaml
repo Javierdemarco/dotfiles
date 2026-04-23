@@ -1,4 +1,4 @@
-theme: "nord"
+theme: "tokyo-night"
 animation: "basic"
 collection_browser:
   show_on_startup: false
